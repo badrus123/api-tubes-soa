@@ -30,10 +30,7 @@ class TagihanController extends Controller
     }
     public function post_tagihan(Request $request)
     {
-        $this->validate($request, [
-            'jumlah_tagihan' => 'required|integer',
-            'id_detail' => 'required|string',
-        ]);
+
 
         try {
 
