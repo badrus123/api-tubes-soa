@@ -24,11 +24,18 @@ class KodeController extends Controller
     {
         // try {
             //code...
-        return response()->json([
-            'success' => 'true',
-            'data' => $this->produk->dataKode($request->input('id'),$request->input('kode')),
-            ], 200);
+            $kode = $this->produk->searchKode($request->input('id'),$request->input('kode'));
+            if ($kode == null) {
+                # code...
+                return response()->json(['message' => 'Kode Produk Not Found!'], 409);
 
+            }
+            else{
+                return response()->json([
+                    'success' => 'true',
+                    'data' => $this->produk->dataKode($request->input('id'),$request->input('kode')),
+                    ], 200);
+            }
         // } catch (\Throwable $th) {
         //     //throw $th;
         //     return response()->json([
