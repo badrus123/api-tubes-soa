@@ -30,6 +30,7 @@ class AuthController extends Controller
             $user->email = $request->input('email');
             $user->saldo = 0;
             $plainPassword = $request->input('password');
+            $user->notelp= $request->input('notelp');
             $user->password = app('hash')->make($plainPassword);
 
             $user->save();

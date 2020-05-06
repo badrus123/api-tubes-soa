@@ -16,12 +16,17 @@ class ProdukController extends Controller
      */
     public function __construct()
     {
+        $this->produk = new Produk;
+
         $this->middleware('auth');
     }
 
     public function allProduk()
     {
-        return Produk::All();
+        return response()->json([
+            'success' => 'true',
+            'data' => $this->produk->dataListProduk(),
+            ], 200);
     }
 
 
