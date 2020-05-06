@@ -41,7 +41,7 @@ class TagihanController extends Controller
             $tagihan = new Tagihan;
             $tagihan->jumlah_tagihan = $request->input('jumlah_tagihan');
             $tagihan->id_detail = $request->input('id_detail');
-            $tagihan->id_user = $request->input('id_user');
+            $tagihan->id_user = Auth::user()->id;
 
             $tagihan->save();
             //return successful response
