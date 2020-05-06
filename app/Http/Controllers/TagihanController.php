@@ -33,7 +33,6 @@ class TagihanController extends Controller
         $this->validate($request, [
             'jumlah_tagihan' => 'required|string',
             'id_detail' => 'required|string',
-            'id_user' => 'required|string',
         ]);
 
         try {
