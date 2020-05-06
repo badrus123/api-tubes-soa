@@ -22,8 +22,6 @@ class KodeController extends Controller
 
     public function index(Request $request)
     {
-        // try {
-            //code...
             $kode = $this->produk->searchKode($request->input('id'),$request->input('kode'));
             if ($kode == null) {
                 # code...
@@ -36,12 +34,7 @@ class KodeController extends Controller
                     'data' => $this->produk->dataKode($request->input('id'),$request->input('kode')),
                     ], 200);
             }
-        // } catch (\Throwable $th) {
-        //     //throw $th;
-        //     return response()->json([
-        //         'message' => 'error Search Produk'
-        //         ], 409);
-        // }
+      
       
     }
 
